@@ -19,3 +19,7 @@ def calculate_all(a, b):
         "multiply": multiply(a, b),
         "divide": divide(a, b)
     }
+
+
+def power(a, b):
+    return a ** b
