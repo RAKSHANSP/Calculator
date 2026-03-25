@@ -23,3 +23,7 @@ def test_calculate_all():
     assert result["subtract"] == 8
     assert result["multiply"] == 20
     assert result["divide"] == 5
+
+def test_power():
+    assert power(2, 3) == 8
+
