@@ -11,13 +11,16 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('My Sonar Server') {
-                    bat """
-                    sonar-scanner ^
-                    -Dsonar.projectKey=calculator ^
-                    -Dsonar.sources=. ^
-                    -Dsonar.host.url=http://localhost:9000
-                    """
+                script {
+                    def scannerHome = tool 'sonar-scanner'
+                    withSonarQubeEnv('My Sonar Server') {
+                        bat """
+                        ${scannerHome}\\bin\\sonar-scanner.bat ^
+                        -Dsonar.projectKey=calculator ^
+                        -Dsonar.sources=. ^
+                        -Dsonar.host.url=http://localhost:9000
+                        """
+                    }
                 }
             }
         }
