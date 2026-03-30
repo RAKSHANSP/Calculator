@@ -1,17 +1,7 @@
 pipeline {
     agent any
 
-    environment {
-        SONARQUBE = 'My Sonar Server'
-    }
-
     stages {
-
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/RAKSHANSP/Calculator.git'
-            }
-        }
 
         stage('Build') {
             steps {
