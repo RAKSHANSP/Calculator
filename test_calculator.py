@@ -25,5 +25,5 @@ def test_calculate_all():
     assert result["divide"] == 5
 
 def test_power():
-    assert power(2, 3) == 8
+    assert pow(2, 3) == 8
 
